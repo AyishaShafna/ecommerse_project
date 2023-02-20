@@ -1,0 +1,39 @@
+{% extends "common_app/project_home.html" %}
+{% load static %}
+{% block header%}
+    <link rel="stylesheet" href="{% static 'css/adminlogin.css' %}">
+    {% endblock %}
+
+        {% block content %}
+        <div class="adminlogin">
+            <form>
+                <h4>Login</h4>
+                <br><br>
+                <div class="txtbox4">
+                    <label for="name">Username:</label>
+                    <input type="text" size="50">
+                        <br><br>
+                    <label for="name">Password:</label>
+                    <input type="password" size="50">
+                    <br><br>
+            
+                            <button type="button" class="btn btn-success" value="Submit">Login</button>
+                            
+        
+                        
+                </div>
+              </form>
+        </div>
+    
+        {% endblock %}
+    
+
+
+    
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div><a href="sel_home"> <label id="alllabel">Home</label></a> </div>
+    <div><a href="prdct_cat"> <label id="alllabel">Product
+                Catelogue</label></a></div>
+    <div><a href="add_product"> <label id="alllabel">Add Product</label></a> </div>
+    <div><a href="change_pass"> <label id="alllabel">Change Password</label></a>
+    </div>
+    <div><a href="sel_profile"> <label id="alllabel">Profile</label></a> </div>
+    <!DOCTYPE html>
+    <div><a href="recent_orders"> <label id="alllabel">Recent Orders</label></a>
+
+    </div>
+    <div><a href="update_stock"> <label id="alllabel">Update Stock</label></a> </div>
+    <div><a href="order_his"> <label id="alllabel">Order History</label></a></div>
+
+    <br><br><br>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <label for="">Product Name:</label>
+        <input type="text" name="p_name" id=""><br><br>
+        <label for="">Price:</label>
+        <input type="text" name="p_price" id=""><br><br>
+        <label for="">Product no:</label>
+        <input type="text" name="p_number" id=""><br><br>
+        <label for="">Product Category:</label>
+        <input type="text" name="p_category" id=""><br><br>
+        <label for="">Description:</label>
+        <textarea name="p_description" id="" cols="30" rows="10"></textarea><br><br>
+        <label for="">Product Stock:</label>
+        <input type="text" name="p_stock" id=""><br><br><br>
+        <label for="">Product Images:</label>
+        <input type="file" name="p_images" id=""><br><br>
+        
+        <button type="submit" value="Submit" style="background-color: green;">Submit</button>
+      
+
+    </form>
+</body>
+</html>

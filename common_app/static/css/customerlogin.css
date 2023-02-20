@@ -1,0 +1,52 @@
+/*------------- unused style page----------------- */
+.flex_div{
+    display: flex;
+
+}
+.newcustomer{
+    width: 50%;
+    height: auto;
+    margin-left: 20px;
+    margin-top: 20px;
+    background-color: white;
+    border: 0px;
+    border-right: 2px solid grey;
+    display: flex;
+
+}
+.newcustomer h3{
+    color: gray;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.newcustomer h4{
+    color: green;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.newcustomer .txtbox{
+    padding-top: 15px;
+}
+.newcustomer .txtbox input{
+    border: 2px solid gray;
+    border-radius: 2em;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 10px;
+    
+}
+.newcustomer .txtbox label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+.oldcustomer{
+    align-items: flex-start;
+    margin-left: 695px;
+    border:2px solid black;
+    width: 50%;
+    height: 500px;
+    margin-top: 10px;
+    
+}

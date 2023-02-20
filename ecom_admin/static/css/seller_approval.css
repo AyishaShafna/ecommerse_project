@@ -1,0 +1,14 @@
+.div-grid{
+    display: grid;
+    justify-content: space-around;
+}
+.content-div{
+    margin-left: 220px;
+
+}
+
+.content-div table, th, td{
+    border: 2px solid gray;
+    border-collapse: collapse;
+
+}

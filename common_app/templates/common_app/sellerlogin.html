@@ -1,0 +1,98 @@
+{% extends "common_app/project_home.html" %}
+{% load static %}
+{% block header%}
+<style>
+    
+</style>
+<link rel="stylesheet" href="{% static 'css/sellerlogin.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="div_flex2">
+    <div class="div_left">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3>New Seller</h3>
+            <h4>Register</h4>
+            <div class="txtbox3">
+                <label for="name">Company Name:</label>
+                <input type="text" size="50" name="s_company_name">
+                    <br><br>
+
+                <label for="name">Address:</label>
+                <input type="text" size="50" name="s_company_address">
+                <br><br>
+
+
+                <label for="name">Mobile:</label>
+                <input type="text" size="50" name="s_mobile">
+                    <br><br>
+
+                <label for="name">Email:</label>
+                <input type="text" size="50" name="s_email">
+                    <br><br>
+
+
+                    <label for="name">Upload Company Logo:</label>
+                    <input type="file" name="s_company_logo" id="companylogo">
+                    <br><br>
+
+                    <h5>Bank Details</h5>
+                    <br>
+
+                    <label for="name">Bank Name:</label>
+                    <input type="text" size="50" name="s_bank_name">
+                        <br><br>
+
+                    <label for="name">A/C Holder Name:</label>
+                    <input type="text" size="50" name="s_acc_holdername">
+                    <br><br>
+
+                    <label for="name">Account No:</label>
+                    <input type="text" size="50" name="s_acc_no">
+                        <br><br>
+
+                    <label for="name">IFSC Code:</label>
+                    <input type="text" size="50" name="s_ifsc">
+                    <br><br>
+    
+                    <!-- <label for="name"> Bank Address:</label>
+                    <input type="text" size="50">
+                    <br><br> -->
+                
+                        <button type="button" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-success" value="Submit" name="s_signup">Submit</button>
+                        <br><br>
+                        
+    
+                    
+            </div>
+          </form>
+    </div>
+    <div class="div_right">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}  
+            <h3>Already Registered?</h3>
+            <h4>Login</h4>
+            <div class="txtbox4">
+                <label for="name">Username:</label>
+                <input type="text" size="50" name="seller_username">
+                    <br><br>
+                <label for="name">Password:</label>
+                <input type="password" size="50" name="seller_password">
+                <br><br>
+        
+                        <button type="submit" class="btn btn-success" value="Submit" name="s_login">Login</button>
+                        {{msg}}
+                        
+    
+                    
+            </div>
+          </form>
+    </div>
+
+</div>
+
+{% endblock %}

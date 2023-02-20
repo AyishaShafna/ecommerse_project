@@ -1,0 +1,21 @@
+.adminlogin{
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: center;
+}
+.adminlogin h4{
+    color: green;
+    font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+.adminlogin input{
+    border: 2px solid gray;
+    border-radius: 2em;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.adminlogin label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}

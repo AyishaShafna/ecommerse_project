@@ -1,0 +1,38 @@
+{% extends "ecom_admin/admin_home.html" %}
+{% load static %}
+{% block header%}
+<link rel="stylesheet" href="{% static 'css/seller_approval.css' %}">
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="div-grid">
+    <div class="content-div">
+        <table>
+            <tr>
+                <th>SR NO:</th>
+                <th>Seller Id</th>
+                <th>Seller Name</th>
+                <th>Seller Address</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>121</td>
+                <td>apple</td>
+                <td>jnjhdsgsdds</td>
+                <td>7894563211</td>
+                <td>apple@gmail.com</td>
+                <td>approved</td>
+                
+            </tr>
+        </table>
+
+    </div>
+
+</div>
+{% endblock %}

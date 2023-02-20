@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* .topnav {
+            position: fixed;
+            top: 0;
+            height: 40px;
+            background-color: #305830;
+            width: 100%;
+
+        } */
+
+        .div-flex {
+            display: flex;
+
+        }
+
+        .div-flex .div-left .sidebar {
+            width: 200px;
+            height: 500px;
+            background-color: rgb(95, 177, 95);
+            /* display: block; */
+
+
+        }
+
+        .div-flex .div-left .sidebar div {
+            margin-left: 10px;
+            justify-content: space-between;
+            padding-top: 25px;
+        }
+
+        .div-flex .div-left .sidebar a {
+            text-decoration: none;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-size: large;
+            font-weight: bold;
+            color: #2f1111;
+
+        }
+
+        .div-flex .div-left .sidebar a:hover {
+            border-radius: 2em;
+            border: 1px solid black;
+        }
+
+        .div-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+        }
+
+
+        .div-flex .div-right .content .div-grid{
+            margin-top: 40px;
+            background-color: beige;
+            height: 500px;
+            width: 100%;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="topnav">
+
+        <nav>
+
+        </nav>
+
+    </div>
+    <div class="div-flex">
+        <div class="div-left">
+            <div class="sidebar">
+                <div><a href="sel_home"> <label id="alllabel">Home</label></a> </div>
+                <div><a href="prdct_cat"> <label id="alllabel">Product
+                            Catelogue</label></a></div>
+                <div><a href="add_product"> <label id="alllabel">Add Product</label></a> </div>
+                <div><a href="change_pass"> <label id="alllabel">Change Password</label></a>
+                </div>
+                <div><a href="sel_profile"> <label id="alllabel">Profile</label></a> </div>
+                <!DOCTYPE html>
+                <div><a href="recent_orders"> <label id="alllabel">Recent Orders</label></a>
+
+                </div>
+                <div><a href="update_stock"> <label id="alllabel">Update Stock</label></a> </div>
+                <div><a href="order_his"> <label id="alllabel">Order History</label></a></div>
+
+            </div>
+        </div>
+
+        <div class="div-right">
+            <div class="content">
+                <div class="div-grid">
+                    {% for product in list %}
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{product.product_images.url}}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.product_name}}</h5>
+                            <p class="card-text">{{product.product_price}}</p>
+                            <p class="card-text">{{product.product_description}}</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

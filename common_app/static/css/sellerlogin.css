@@ -1,0 +1,114 @@
+.div_flex2{
+    display: flex;
+}
+
+/* ---------left div-seller registration div design------------ */
+
+.div_flex2 .div_left{
+    width: 49%;
+    height: auto;
+    border-right: 2px solid grey;
+    margin-left: 10px;
+    margin-top: 10px;
+    align-items: flex-start;
+
+}
+
+
+.div_flex2 .div_left h3{
+    color: gray;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.div_flex2 .div_left h4{
+    color: green;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.div_flex2 .div_left .txtbox3{
+    padding-top: 15px;
+}
+.div_flex2 .div_left .txtbox3 input{
+    border: 2px solid gray;
+    border-radius: 2em;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 10px;
+    
+    
+}
+.div_flex2 .div_left .txtbox3 label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+.div_flex2 .div_left .txtbox3 #companylogo{
+    border-style: none;
+}
+.div_flex2 .div_left .txtbox3 h5{
+    text-align: center;
+    color: gray;
+}
+
+/* ---------------------right div-----seller login div design -------------*/
+
+.div_flex2 .div_right{
+
+    width: 49%;
+    height: auto;
+    margin-left: 10px;
+    margin-top: 10px;
+    align-items: flex-start;
+}
+
+.div_flex2 .div_right h3{
+    color: gray;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.div_flex2 .div_right h4{
+    color: green;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.div_flex2 .div_right .txtbox4{
+    padding-top: 15px;
+
+}
+.div_flex2 .div_right .txtbox4 input{
+    border: 2px solid gray;
+    border-radius: 2em;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 10px;
+    
+}
+.div_flex2 .div_right .txtbox7 label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}
+
+/*------------------ admin login page styling -------------------*/
+
+.adminlogin{
+    margin-top: 20px;
+    margin-left: 10px;
+    text-align: center;
+}
+.adminlogin h4{
+    color: green;
+    font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+.adminlogin input{
+    border: 2px solid gray;
+    border-radius: 2em;
+    height: 30px;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.adminlogin label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+}

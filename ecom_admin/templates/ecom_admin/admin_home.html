@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+    <link rel="stylesheet" href="{% static 'css/adminhome.css' %}">
+    <title>Document</title>
+    <style>
+    .grid-div{
+    display: grid;
+    justify-content: space-between;
+}
+.grid-div .admin_sidebar{
+    margin-top: 0;
+    width: 200px;
+    height: auto;
+    background-color: white;
+    display: block;
+    margin-left: 10px;
+    padding: 10px;
+    color:black;
+    font-size: large;
+}
+.grid-div .admin_sidebar a{
+    text-decoration: none;
+    color:black;
+    font-size: large;
+    }
+    a:hover{
+        background-color: lightblue;
+        border-radius: 1em;
+    }
+    </style>
+    
+    {% block header %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+    <div>
+        <nav class="navbar sticky-top flex-column admin_top_nav ">
+            <a class="nav-link " href="#">Home</a>
+            
+            <a class="nav-link" href="#">Logout</a>
+        </nav>
+    </div>
+    <div class="content">
+        
+<div class="grid-div">
+        <div class="admin_sidebar">
+            <a href="admin_home">Home</a><br><br>
+            <a href="seller_approval">Approve Seller</a><br><br>
+            <a href="view_seller">View Seller</a><br><br>
+            <a href="view_customer">View Customer</a><br><br>
+
+        </div>
+    </div>
+
+      
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>

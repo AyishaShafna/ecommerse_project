@@ -1,0 +1,15 @@
+.top-nav{
+    height: 40px;
+    background-color: black;
+}
+
+.top-nav a{
+    color: white;
+
+}
+
+.top-nav a:hover{
+    background-color: white;
+    border-radius: 5em;
+    color: black;
+}

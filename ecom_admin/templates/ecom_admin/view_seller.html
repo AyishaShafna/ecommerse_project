@@ -1,0 +1,29 @@
+{% extends "ecom_admin/admin_home.html" %}
+{% load static %}
+{% block header%}
+<link rel="stylesheet" href="{% static 'css/seller_approval.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<div class="div-grid">
+    <div class="content-div">
+        <table>
+            <tr>
+                <th>SR NO:</th>
+                <th>Seller Id</th>
+                <th>Seller Name</th>
+                <th>Seller Address</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Company Logo</th>
+                <th>Account No:</th>
+                <th>Bank Address</th>
+            </tr>
+            
+        </table>
+
+    </div>
+
+</div>
+{% endblock %}

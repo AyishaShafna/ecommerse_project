@@ -1,0 +1,91 @@
+{% extends "common_app/project_home.html" %}
+{% load static %}
+{% block header%}
+<style>
+    #customerimage{
+        border : 0;
+    }
+</style>
+<link rel="stylesheet" href="{% static 'css/sellerlogin.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="div_flex2">
+    <div class="div_left">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3>New Customer</h3>
+            <h4>Register</h4>
+            <div class="txtbox3">
+                <label for="name">Name:</label>
+                <input type="text" size="50" name="c_name">
+                    <br><br>
+
+                <label for="name">Address:</label>
+                <input type="text" size="50" name="c_address">
+                <br><br>
+
+
+                <label for="name">Mobile:</label>
+                <input type="text" size="50" name="c_mobile">
+                    <br><br>
+
+                <label for="name" >Email:</label>
+                <input type="text" size="50" placeholder="Your email id will be your username" name="c_email">
+                    <br><br>
+
+                    <label for="name">Gender:</label>
+                    <input type="radio" name="c_gender" id="Male" value="male" ><label for="">Male</label>
+                    <input type="radio" name="c_gender" id="Female" value="female"><label for="">Female</label>
+                <br><br>
+
+
+
+                <label for="name">Password:</label>
+                <input type="password" size="50" name="c_password">
+                    <br><br>
+
+                    <label for="name">Confirm Password:</label>
+                    <input type="text" size="50" name="c_confirmpassword">
+                        <br><br>
+
+                        <label for="name">Image Upload:</label>
+                        <input type="file" name="c_image" id="customerimage">
+                            <br><br>
+                
+                        <button type="button" class="btn btn-primary">Reset</button>
+                        <button type="submit" class="btn btn-success" value="Submit" name="c_signup">Submit</button>
+                        <br><br>
+                        
+    
+                    
+            </div>
+          </form>
+    </div>
+    <div class="div_right">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %} 
+            <h3>Already Registered?</h3>
+            <h4>Login</h4>
+            <div class="txtbox4">
+                <label for="name">Username:</label>
+                <input type="text" size="50" name="login_username">
+                    <br><br>
+                <label for="name">Password:</label>
+                <input type="password" size="50" name="login_password">
+                <br><br>
+        
+                        <button type="submit" class="btn btn-success" value="Submit" name="c_login">Login</button>
+                        {{msg}}
+                        
+    
+                    
+            </div>
+          </form>
+    </div>
+
+</div>
+
+{% endblock %}
