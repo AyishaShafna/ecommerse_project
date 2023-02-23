@@ -1,8 +1,9 @@
-from django.shortcuts import render, redirect
-from common_app.models import Customer,Seller 
-from seller.models import Products       #import class Customer
-from django.core.mail import send_mail
+from django.shortcuts import render, redirect      # use redirect when redirect pages
+from common_app.models import Customer,Seller    #import class Customer,seller from common_app
+from seller.models import Products               #import class Products from seller app
+from django.core.mail import send_mail    #to send mails
 from django.conf import settings
+from django.http import JsonResponse    #import jsonresponse when using ajax
 
 import random
 
@@ -114,3 +115,8 @@ def sellerlogin(request):
 
 def admin_login(request):
     return render(request,'common_app/admin_login.html')
+
+def email_exists(request):
+    e_mail = request.POST['email_id']   #['email_id] is from ajax code
+    status = Customer.objects.filter(email = e_mail).exists()    #email is from database of customer table
+    return JsonResponse({'status': status})

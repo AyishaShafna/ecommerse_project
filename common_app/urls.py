@@ -8,4 +8,5 @@ urlpatterns = [
     path('customerlogin',views.customerlogin,name='login'),
     path('sellerlogin',views.sellerlogin),
     path('admin_login',views.admin_login),
+    path('email_exists',views.email_exists,name='email_exists')
 ]

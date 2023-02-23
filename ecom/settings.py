@@ -128,7 +128,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
    os.path.join(BASE_DIR, 'common_app/static/'),
-   os.path.join(BASE_DIR, 'ecom_admin/static/')
+   os.path.join(BASE_DIR, 'ecom_admin/static/'),
 ]
 # STATICFILES_DIRS = [os.path.join(BASE_DIR,'customer/static')]
 

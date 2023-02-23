@@ -1,3 +1,4 @@
+
 {% extends "ecom_admin/admin_home.html" %}
 {% load static %}
 {% block header%}
@@ -10,16 +11,36 @@
     <div class="content-div">
         <table>
             <tr>
-                <th>SR NO:</th>
+                <!-- <th>SR NO:</th> -->
                 <th>Seller Id</th>
                 <th>Seller Name</th>
                 <th>Seller Address</th>
                 <th>Mobile</th>
                 <th>Email</th>
                 <th>Company Logo</th>
+                <th>Bank Name</th>
+                <th>Account Holder</th>
                 <th>Account No:</th>
-                <th>Bank Address</th>
+                <th>Ifsc</th>
+                <th>Username</th>
+                <th>Password</th>
             </tr>
+            {% for sel_dtls in sel_details %}
+            <tr>
+                <td>{{sel_dtls.id}}</td>
+                <td>{{sel_dtls.company_name}}</td>
+                <td>{{sel_dtls.company_address}}</td>
+                <td>{{sel_dtls.company_mobile}}</td>
+                <td>{{sel_dtls.company_email}}</td>
+                <td><img src="{{sel_dtls.company_logo.url}}" alt=""></td>
+                <td>{{sel_dtls.bank_name}}</td>
+                <td>{{sel_dtls.acc_holder}}</td>
+                <td>{{sel_dtls.acc_no}}</td>
+                <td>{{sel_dtls.ifsc_code}}</td>
+                <td>{{sel_dtls.seller_username}}</td>
+                <td>{{sel_dtls.seller_password}}</td>
+            </tr>
+            {% endfor %}
             
         </table>
 

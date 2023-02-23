@@ -1,4 +1,13 @@
-{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,25 +32,6 @@
     <link rel="stylesheet" href="{% static 'css/adminhome.css' %}">
     <title>Document</title>
     <style>
-        .admin_top_nav{
-    height: 40px;
-    background-color: darkblue;
-    display: flex;
-    justify-content: space-around;
-}
-
-.admin_top_nav a{
-    color: white;
-
-}
-
-.admin_top_nav a:hover{
-    background-color: silver;
-    border-radius: 5em;
-    color: black;
-}
-
-
     .grid-div{
     display: grid;
     justify-content: space-between;
@@ -67,24 +57,24 @@
         border-radius: 1em;
     }
     </style>
-     {% block header %}
-
-     {% endblock %}
     
+    {% block header %}
+
+    {% endblock %}
 
 </head>
 
 <body>
     <div>
-        <nav class="admin_top_nav">
-            <a class="nav-link " href="admin_home">Home</a>
+        <nav class="navbar sticky-top flex-column admin_top_nav ">
+            <a class="nav-link " href="#">Home</a>
             
-            <a class="nav-link" href=#>Logout</a>
+            <a class="nav-link" href="#">Logout</a>
         </nav>
     </div>
     <div class="content">
         
-<div class="grid-div">
+<!-- <div class="grid-div">
         <div class="admin_sidebar">
             <a href="admin_home">Home</a><br><br>
             <a href="seller_approval">Approve Seller</a><br><br>
@@ -95,10 +85,34 @@
     </div>
 
       
+    </div> -->
+
+
+    <div class="adminlogin">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h4>Login</h4>
+            <br><br>
+            <div class="txtbox4">
+                <label for="name">Username:</label>
+                <input type="text" size="50" name="a_username">
+                    <br><br>
+                <label for="name">Password:</label>
+                <input type="password" size="50" name="a_password">
+                <br><br>
+                {{message}}
+        
+                        <button type="Submit" class="btn btn-success" value="Submit">Login</button>
+                        
+    
+                    
+            </div>
+          </form>
     </div>
     {% block content %}
     {% endblock %}
-   
 </body>
 
+</html>
+</body>
 </html>
