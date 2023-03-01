@@ -19,10 +19,10 @@
 <body>
     <div>
         <nav>
-            <a href="cus_home">Home</a>
-            <a href="my_cart">Cart</a>
-            <a href="my_orders">My Orders</a>
-            <a href="view_product">Shop Here</a>
+            <a href="{% url 'cutomer_app:cus_home' %}">Home</a>
+            <a href="{% url 'cutomer_app:my_cart' %}">Cart</a>
+            <a href="{% url 'cutomer_app:my_orders' %}">My Orders</a>
+            <a href="{% url 'customer_app:view_product' %}">Shop Here</a>
             <a href="{% url 'customer_app:logout' %}">logout</a>
 
         </nav>

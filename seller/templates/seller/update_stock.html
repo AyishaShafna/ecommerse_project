@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <div class="main_div">
+            <div class="page_div">
+                <div class="welcom">
+                    <h1> WELCOME  {{dt.company_name}}</h1>
+                    <h1>UPDATE STOCK</h1>
+                </div>
+                <div class="content_div">
+                    <div class="menu_div">
+                        <h2>MENU</h2>
+                    </div>
+                    <div><a href="sel_home"> <label id="alllabel">Home</label></a> </div>
+                    <div><a href="prdct_cat"> <label id="alllabel">Product
+                                Catelogue</label></a></div>
+                    <div><a href="add_product"> <label id="alllabel">Add Product</label></a> </div>
+                    <div><a href="change_pass"> <label id="alllabel">Change Password</label></a>
+                    </div>
+                    <div><a href="sel_profile"> <label id="alllabel">Profile</label></a> </div>
+                    <!DOCTYPE html>
+                    <div><a href="recent_orders"> <label id="alllabel">Recent Orders</label></a>
+
+                    </div>
+                    <div><a href="update_stock"> <label id="alllabel">Update Stock</label></a> </div>
+                    <div><a href="order_his"> <label id="alllabel">Order History</label></a></div>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+    </form><br><br><br><br>
+    <div>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="">Select Category</label>
+            <select name="" id="selected_cat">
+                {% for products in product_list %}
+                <option value="">{{products.product_category}}</option>
+                {% endfor %}
+                
+            </select><br><br>
+
+
+            <label for="">Select Product Name:</label>
+            <select name="select_prod" id="select_prod">
+               
+            </select><br><br>
+
+            <label for="">Current Stock</label>
+            <input type="text"><br><br>
+
+            <label for="">Add Stock</label>
+            <input type="text" name="addstock"><br><br>
+
+            <input type="Submit" value="Update">
+        </form>
+    </div>
+
+
+
+
+
+    <script>
+        $('#selected_cat').change(function(){
+            console.log('gug')
+            $.ajaxSetup({
+                headers: {
+                  "X-CSRFToken": $('[name=csrfmiddlewaretoken]').val()  //passing csrf token in ajax request
+                }
+            })
+    
+            $.ajax({
+                url:"{% url 'seller:select_product' %}",  // url in which ajax call is made
+                type:'POST',  //method in which data is send
+                data:{
+                    select_cat :$(this).val()  //sending data in json fromat here, key is email
+                },
+                success:function(response){ 
+                    $('#select_prod').append($('<option>'.text(pro_nm)))
+                     // ----to display in span
+                   
+                }
+            })
+        })
+    </script>
+
+    
+</body>
+
+</html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,17 +36,19 @@
     </div><br><br><br>
     <div class="div-grid">
         {% for prod in list_of_products %}
-        
-            <div class="card" style="width: 18rem;">
-                <img src="{{prod.product_images.url}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{prod.product_name}}</h5>
-                    <p class="card-text">{{prod.product_price}}</p>
-                    <p class="card-text">{{prod.product_description}}</p>
-                    <a href="#" class="btn btn-primary">Add Cart</a>
-                </div>
+
+        <div class="card" style="width: 18rem;">
+            <img src="{{prod.product_images.url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{prod.product_name}}</h5>
+                <p class="card-text">{{prod.product_price}}</p>
+                <p class="card-text">{{prod.product_description}}</p>
+                <a href="{% url 'customer_app:product_details' prod.id %}" class="btn btn-primary">View Product</a>
+                
+
             </div>
-    
+        </div>
+
         {% endfor %}
     </div>
 

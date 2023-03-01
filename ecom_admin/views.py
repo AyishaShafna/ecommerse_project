@@ -3,6 +3,8 @@ from common_app.models import Seller,Customer
 from ecom_admin.models import Ecom_Admin
 from django.http import HttpResponse
 from django.conf import settings
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 
 
 # Create your views here.
@@ -18,7 +20,8 @@ def view_seller(request):
     return render(request,'ecom_admin/view_seller.html',{'sel_details':seller_details})
 
 def view_customer(request):
-    return render(request,'ecom_admin/view_customer.html')
+    customer_dtls = Customer.objects.all()
+    return render(request,'ecom_admin/view_customer.html',{'cus_dtls':customer_dtls})
 
 def admin_login(request):
     msg =""
@@ -38,3 +41,9 @@ def admin_login(request):
 #     del request.session['admin']
 #     request.session.flush()
 #     return redirect('ecom_admin:admin_login')
+
+
+@api_view(['GET'])
+def index(request):
+    message = 'Congratulations, you have created an API'
+    return Response(message)

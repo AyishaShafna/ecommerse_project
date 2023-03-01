@@ -4,6 +4,8 @@ from seller.models import Products #import class Customer
 from common_app.models import Seller
 # from django.core.mail import send_mail
 from django.conf import settings
+from django.http import JsonResponse    #import jsonresponse when using ajax
+
 
 import random
 
@@ -36,8 +38,14 @@ def add_product(request):
         newproduct.save()
     return render(request,'seller/add_product.html')
 
+    
+
 def update_stock(request):
-    return render(request,'seller/update_stock.html')
+    prdct_dtls = Products.objects.filter(seller_id = request.session['seller']).values('product_category').distinct()
+    return render(request,'seller/update_stock.html',{'product_list':prdct_dtls})
+
+
+
 
 def change_pass(request):
     return render(request,'seller/change_pass.html')
@@ -57,3 +65,13 @@ def sel_profile(request):
     seller_dtls = Seller.objects.get(id = request.session['seller'])
 
     return render(request,'seller/sel_profile.html',{'dtls':seller_dtls})
+
+
+
+def select_product(request):
+    select_ct = request.POST['select_cat']   #['select_prdct'] is from ajax code
+    product_lst = Products.objects.filter(seller_id = request.session['seller'], product_category = select_ct).values('product_name')
+    productname = product_lst[0]['product_name']
+    print(productname)
+  
+    return JsonResponse({'pro_nm':productname})

@@ -9,5 +9,6 @@ urlpatterns = [
     path('view_customer',views.view_customer),
     path('admin_login',views.admin_login),
     # path('logout',views.logout,name='logout')
+    path('index/',views.index,name='index')
 
 ]

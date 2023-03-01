@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <nav>
+            <a href="cus_home">Home</a>
+            <a href="{% url 'customer_app:my_cart' %}">Cart</a>
+            <a href="my_orders">My Orders</a>
+            <a href="{% url 'customer_app:view_product' %}">Shop Here</a>
+            <a href="common_app:project_home"><input type="button" value="logout"></a>
+        </nav>
+    </div><br><br><br>
+
+    <h1>{{prdct_dtl.product_name}}</h1>
+    <div class="card" style="width: 18rem;">
+        <img src="{{prdct_dtl.product_images.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{prdct_dtl.product_name}}</h5>
+            <p class="card-text">{{prdct_dtl.product_price}}</p>
+            <p class="card-text">{{prdct_dtl.product_description}}</p>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="number" name="qty">
+                <button type="submit" href="#" class="btn btn-primary">Add To Cart</button>{{msg}}
+            </form>
+        </div>
+    </div>
+</body>
+</html>

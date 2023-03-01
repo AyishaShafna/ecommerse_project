@@ -47,34 +47,29 @@
        <h2>My Cart</h2>
        <table>
         <tr>
-            <th>Sl No</th>
+            <!-- <th>Sl No</th> -->
             <th>Product Image</th>
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Total</th>
+            <th></th>
         </tr>
+        {% for item in cart_item %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><select name="" id="">
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-                <option value="">6</option>
-                <option value="">7</option>
-                <option value="">8</option>
-            </select></td>
-            <td></td>
+            <!-- <td>{{item.}}</td> -->
+            <td><img src="{{item.product.product_images.url}}" width="100px"></td>
+            <td>{{item.product.product_name}}</td>
+            <td>{{item.product.product_price}}</td>
+            <td>{{item.qunatity}}</td>
+            <td>{{item.total}}</td>
+            <td><a href="{% url 'customer_app:delete_cartitems' item.id %}"> <button>Remove</button></a></td>
         </tr>
+        {% endfor %}
        </table><br>
     </div>
     <div class="total">
-        <h5>Total:</h5>
+        <h5>Total:{{grand_tot}} </h5>
         <input type="button" value="Checkout">
                </div>
     

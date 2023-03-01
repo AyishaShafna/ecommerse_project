@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'common_app',
     'ecom_admin',
     'seller',
-    'customer_app'
+    'customer_app',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [

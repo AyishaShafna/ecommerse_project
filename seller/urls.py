@@ -10,5 +10,5 @@ urlpatterns = [
     path('prdct_cat',views.prdct_cat),
     path('recent_orders',views.recent_orders),
     path('sel_profile',views.sel_profile),
-   
+   path('select_product',views.select_product,name='select_product')
 ]
